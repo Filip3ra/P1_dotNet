@@ -1,0 +1,116 @@
+* entrada e saída
+* sistemas de tipo (fortemente tipada)
+* declaração de variáveis e inicialização
+* tipos internos
+* common type system
+* tipos de valor
+* tipos de valor compostos
+* tipos de valor literais
+* tipos de referência
+* membros string
+* tipos genéricos
+* tipos implícitos
+
+--------------------------------------------------------------------------------
+
+Tipos de Dados e Variáveis:
+
+O que são tipos de dados primitivos em C#?
+Quais são os tipos de dados numéricos em C# e suas diferenças?
+Explique a diferença entre tipos de dados por valor e tipos de dados por referência em C#.
+Estruturas de Controle:
+
+Como você define uma estrutura if-else em C#?
+Explique o uso da estrutura switch-case em C# e forneça um exemplo.
+Como você define um loop for, while e do-while em C#?
+Arrays e Coleções:
+
+Como você declara e inicializa um array em C#?
+Qual é a diferença entre uma lista e um array em C#?
+Explique o uso de dicionários (Dictionary) em C#.
+Métodos e Funções:
+
+Como você define um método em C#?
+Quais são os modificadores de acesso disponíveis para os métodos em C#?
+O que é uma função lambda em C# e como você a usa?
+Classes e Objetos:
+
+Como você define uma classe em C#?
+O que é um construtor e qual é sua finalidade em uma classe?
+Explique o conceito de herança em C# e forneça um exemplo.
+Tratamento de Exceções:
+
+O que são exceções em C# e por que são usadas?
+Como você lida com exceções usando blocos try-catch em C#?
+Explique o uso de blocos finally em tratamento de exceções.
+Programação Orientada a Eventos:
+
+O que são delegates em C# e como são usados?
+Explique o conceito de eventos em C# e forneça um exemplo.
+Como você assina e desassina eventos em C#?
+Programação Orientada a Objetos Avançada:
+
+O que são propriedades automáticas em C# e como você as usa?
+Explique o uso de interfaces em C# e forneça um exemplo.
+Qual é a diferença entre uma classe abstrata e uma interface em C#?
+LINQ (Language-Integrated Query):
+
+O que é LINQ e qual é sua finalidade em C#?
+Explique como você usa consultas LINQ para filtrar, ordenar e agrupar dados.
+Qual é a diferença entre métodos de extensão e operadores de consulta em LINQ?
+Manipulação de Arquivos e Streams:
+
+Como você lê e escreve em arquivos usando C#?
+Explique o conceito de stream em C# e forneça exemplos de seu uso.
+Qual é a diferença entre os métodos File.ReadAllLines e File.ReadAllText em C#?
+
+
+--------------------------------------------------------------------------------
+
+Entrada e Saída:
+a) Como você lê dados do usuário a partir do console em C#? Forneça um exemplo de código.
+b) Explique o uso do método Console.WriteLine para saída de dados em C#. Dê um exemplo.
+
+Sistemas de Tipo (Fortemente Tipado):
+a) O que significa dizer que C# é uma linguagem fortemente tipada? Explique por que isso é importante.
+b) Qual é a diferença entre um sistema de tipo fortemente tipado e um sistema de tipo fracamente tipado? Dê exemplos.
+
+Declaração de Variáveis e Inicialização:
+a) Quais são as formas de declarar e inicializar variáveis em C#? Forneça exemplos de cada uma.
+b) Explique o conceito de inicialização tardia (lazy initialization) em C#. Dê um exemplo de como usar isso em seu código.
+
+Tipos Internos:
+a) Liste alguns dos tipos internos primitivos disponíveis em C# e explique brevemente cada um deles.
+b) Como você converte um valor de um tipo interno para outro em C#? Forneça exemplos.
+
+Common Type System:
+a) O que é o Common Type System (CTS) em C# e por que é importante?
+b) Explique a relação entre o CTS e a interoperabilidade entre diferentes linguagens .NET.
+
+Tipos de Valor:
+a) O que são tipos de valor em C# e como eles diferem de tipos de referência?
+b) Dê exemplos de tipos de valor em C# e explique quando é apropriado usá-los.
+
+Tipos de Valor Compostos:
+a) Explique o conceito de tipos de valor compostos em C#. Dê exemplos.
+b) Qual é a diferença entre um tipo de valor simples e um tipo de valor composto em C#? Dê exemplos.
+
+Tipos de Valor Literais:
+a) O que são literais em C#? Dê exemplos de literais para diferentes tipos de valor.
+b) Como você expressa literais de cadeia de caracteres (strings) em C#? Dê exemplos.
+
+Tipos de Referência:
+a) Explique o que são tipos de referência em C# e como eles são armazenados na memória.
+b) Dê exemplos de tipos de referência em C# e explique quando é apropriado usá-los.
+
+Membros String:
+a) Quais são alguns dos membros mais comuns da classe String em C#? Explique a finalidade de cada um.
+b) Como você concatena strings em C#? Dê exemplos de diferentes métodos de concatenação.
+
+Tipos Genéricos:
+a) O que são tipos genéricos em C# e por que são úteis?
+b) Explique como você define e usa uma classe genérica em C#. Dê um exemplo.
+
+Tipos Implícitos:
+a) O que são tipos implícitos em C#? Dê exemplos de onde eles são utilizados.
+b) Quais são as vantagens e desvantagens do uso de tipos implícitos em comparação com tipos explícitos? Explique.
