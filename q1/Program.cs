@@ -27,6 +27,23 @@ x = y = 0.0;
 Console.WriteLine(x / y);
  */
 
-/* Questão 1 d)*/
+/* Questão 1 d)
+int x, y;
+x = y = 0;
 
+Console.WriteLine(x / y);
+*/
+
+/* Questão 1 e)
+
+static void metodo(int x, int y, int z)
+{
+  Console.WriteLine(z);
+}
+
+metodo(1, z: 0, y: 2);
+*/
+
+
+/* Questão 2*/
 
