@@ -110,40 +110,41 @@ metodo(1, z: 0, y: 2);
 
 
   // Codigo 4
-try
-{
-    int[] numeros = { 1, 2, 3 };
-    Console.WriteLine(numeros[10]);
-}
-catch (IndexOutOfRangeException)
-{
-    Console.WriteLine("Algo errado.");
-}
-finally
-{
-    Console.WriteLine("Exemplo 'try catch'.");
-}
+    try
+    {
+        int[] numeros = { 1, 2, 3 };
+        Console.WriteLine(numeros[10]);
+    }
+    catch (IndexOutOfRangeException)
+    {
+        Console.WriteLine("Algo errado.");
+    }
+    finally
+    {
+        Console.WriteLine("Exemplo 'try catch'.");
+    }
 
 
-// Codigo 5
-int num = 9;
-// duvida: Se fosse float seria necessário adicionar o sufixo 'f' 
-//float numfloat = 8.99f;
-double numfloat = 8.99;
-char letra = 'A';
-bool booleano = false;
-string texto = "Olá, mundo";
+    // Codigo 5
+    int num = 9;
+    // duvida: Se fosse float seria necessário adicionar o sufixo 'f' 
+    //float numfloat = 8.99f;
+    double numfloat = 8.99;
+    char letra = 'A';
+    bool booleano = false;
+    string texto = "Olá, mundo";
 
-Console.WriteLine(numfloat);
+    Console.WriteLine(numfloat);
 
-// duvida: tem como mudar o valor armazendo para apenas duas casas decimais?
-// sim:
-numfloat = 8.99;
-numfloat = Math.Round(numfloat, 2); // Arredonda para duas casas decimais
+    // duvida: tem como mudar o valor armazendo para apenas duas casas decimais?
+    // sim:
+    numfloat = 8.99;
+    numfloat = Math.Round(numfloat, 2); // Arredonda para duas casas decimais
 
-Console.WriteLine(numfloat);
+    Console.WriteLine(numfloat);
 
-// arredondar só na hora de mostrar
-numfloat = 8.99999999;
-Console.WriteLine($"{numfloat:F2}"); // Imprime 8.99
+    // arredondar só na hora de mostrar
+    numfloat = 8.99999999;
+    Console.WriteLine($"{numfloat:F2}"); // Imprime 8.99
 */
+
