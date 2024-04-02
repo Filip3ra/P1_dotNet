@@ -1,0 +1,2 @@
+2) 
+propriedade = get e set

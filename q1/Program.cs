@@ -16,8 +16,8 @@ switch (i)
 
 /* Questão 1 b) 
 
-int x = 2, y = 3;
-Console.WriteLine((double)x / y);
+int x = 0, y = 0;
+Console.WriteLine(x / y);
 */
 
 /* Questão 1 c)
@@ -159,88 +159,94 @@ metodo(1, z: 0, y: 2);
     Console.WriteLine($"{numfloat:F2}"); // Imprime 8.99
 */
 
-/* Questão 5 */
+/* Questão 5 
 
 
-class Balanca
-{
-    private int precisao;
-    private double tara;
-    private double peso;
-
-    public Balanca(int precisao)
+    class Balanca
     {
-        this.precisao = precisao;
-        this.tara = 5.0; // valor padrão
-    }
+        private int precisao;
+        private double tara;
+        private double peso;
 
-    public int Precisao
-    {
-        get { return precisao; }
-        set { precisao = value; }
-    }
-
-    public double Tara
-    {
-        get { return tara; }
-        set { tara = value; }
-    }
-
-    public double Peso
-    {
-        get { return peso; }
-        set
+        public Balanca(int precisao)
         {
-            if (value < 0)
-            {
-                throw new ArgumentOutOfRangeException("Peso não pode ser negativo.");
-            }
-            peso = value;
+            this.precisao = precisao;
+            this.tara = 5.0; // valor padrão
         }
-    }
 
-    public string MostrarPeso
-    {
-        get
+        public int Precisao
         {
-            double pesoSemTara = Peso - Tara;
-            return $"{pesoSemTara.ToString($"F{Precisao}")} kg";
+            get { return precisao; }
+            set { precisao = value; }
         }
-    }
-}
 
-class Program
-{
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Digite a precisão da balança:");
-        int precisao = int.Parse(Console.ReadLine());
-        Balanca balanca = new Balanca(precisao);
-
-        while (true)
+        public double Tara
         {
-            try
-            {
-                Console.WriteLine("Digite o peso na balança:");
-                double peso = double.Parse(Console.ReadLine());
-                balanca.Peso = peso;
-                Console.WriteLine(balanca.MostrarPeso);
+            get { return tara; }
+            set { tara = value; }
+        }
 
-                Console.WriteLine("Deseja calcular o próximo peso? (S/N): ");
-                string continuar = Console.ReadLine();
-                if (continuar.ToUpper() == "N")
+        public double Peso
+        {
+            get { return peso; }
+            set
+            {
+                if (value < 0)
                 {
-                    break;
+                    throw new ArgumentOutOfRangeException("Peso não pode ser negativo.");
+                }
+                peso = value;
+            }
+        }
+
+        public string MostrarPeso
+        {
+            get
+            {
+                double pesoSemTara = Peso - Tara;
+                return $"{pesoSemTara.ToString($"F{Precisao}")} kg";
+            }
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Digite a precisão da balança:");
+            int precisao = int.Parse(Console.ReadLine());
+            Balanca balanca = new Balanca(precisao);
+
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("Digite o peso na balança:");
+                    double peso = double.Parse(Console.ReadLine());
+                    balanca.Peso = peso;
+                    Console.WriteLine(balanca.MostrarPeso);
+
+                    Console.WriteLine("Deseja calcular o próximo peso? (S/N): ");
+                    string continuar = Console.ReadLine();
+                    if (continuar.ToUpper() == "N")
+                    {
+                        break;
+                    }
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Formato inválido. Por favor, insira um número válido.");
+                }
+                catch (ArgumentOutOfRangeException ex)
+                {
+                    Console.WriteLine(ex.Message);
                 }
             }
-            catch (FormatException)
-            {
-                Console.WriteLine("Formato inválido. Por favor, insira um número válido.");
-            }
-            catch (ArgumentOutOfRangeException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
         }
     }
-}
+    */
+
+
+
+
+
