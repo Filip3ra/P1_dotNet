@@ -148,3 +148,88 @@ metodo(1, z: 0, y: 2);
     Console.WriteLine($"{numfloat:F2}"); // Imprime 8.99
 */
 
+/* Questão 5*/
+
+
+class Balanca
+{
+    private int precisão;
+    private double tara;
+    private double peso;
+
+    public Balança(int precisão)
+    {
+        this.precisão = precisão;
+        this.tara = 5.0; // valor padrão
+    }
+
+    public int Precisão
+    {
+        get { return precisão; }
+        set { precisão = value; }
+    }
+
+    public double Tara
+    {
+        get { return tara; }
+        set { tara = value; }
+    }
+
+    public double Peso
+    {
+        get { return peso; }
+        set
+        {
+            if (value < 0)
+            {
+                throw new ArgumentOutOfRangeException("Peso não pode ser negativo.");
+            }
+            peso = value;
+        }
+    }
+
+    public string MostrarPeso
+    {
+        get
+        {
+            double pesoSemTara = Peso - Tara;
+            return $"{pesoSemTara.ToString($"F{Precisão}")} kg";
+        }
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Digite a precisão da balança:");
+        int precisão = int.Parse(Console.ReadLine());
+        Balança balança = new Balança(precisão);
+
+        while (true)
+        {
+            try
+            {
+                Console.WriteLine("Digite o peso na balança:");
+                double peso = double.Parse(Console.ReadLine());
+                balança.Peso = peso;
+                Console.WriteLine(balança.MostrarPeso);
+
+                Console.WriteLine("Deseja calcular o próximo peso? (S/N): ");
+                string continuar = Console.ReadLine();
+                if (continuar.ToUpper() == "N")
+                {
+                    break;
+                }
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Formato inválido. Por favor, insira um número válido.");
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+    }
+}
