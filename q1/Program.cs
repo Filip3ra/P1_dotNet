@@ -44,17 +44,27 @@ static void metodo(int x, int y, int z)
 metodo(1, z: 0, y: 2);
 */
 
-/* Questão 2
+/* Questão 2 
   public class Empregado
   {
       // Campo privado para armazenar o tipo de empregado
-      private string tipoEmpregado;
+      // private string tipoEmpregado;
 
+      //A palavra propriedade indica este tipo de estrutura:
       // Propriedade TipoEmpregado acessível apenas dentro da classe Empregado e suas classes derivadas
-      protected string TipoEmpregado
+      private string TipoEmpregado
       {
-          get { return tipoEmpregado; }
-          set { tipoEmpregado = value; }
+          get;
+          set;
+      } 
+
+      //se fosse get publico e set só acessivel internamente
+      // coloca public na definição 
+      // Propriedade TipoEmpregado acessível apenas dentro da classe Empregado e suas classes derivadas
+      public string TipoEmpregado
+      {
+          get;
+          private set;
       }
 
       // Método para exibir o tipo de empregado
@@ -87,17 +97,18 @@ metodo(1, z: 0, y: 2);
   }
 */
 
-/* Questão 3 
+
+/* Questão 3  
 
   // Codigo 1
   string[] marcas = {"VW", "Fiat", "Ford", "Hyundai"}; 
-  foreach (string marca in marcas) 
+  foreach (string i in marcas) 
   { 
-      Console.WriteLine(marca); 
+      Console.WriteLine(i); 
   }
 
   // Codigo 2
-  private static void Saudacao(string[] args)
+  private static void Main(string[] args)
   {
       Console.WriteLine("Olá, Mundo!");
   }
@@ -115,7 +126,7 @@ metodo(1, z: 0, y: 2);
         int[] numeros = { 1, 2, 3 };
         Console.WriteLine(numeros[10]);
     }
-    catch (IndexOutOfRangeException)
+    catch (IndexOutOfRangeException) // multiplos catchs permitidos desde que exceções sejam diferentes
     {
         Console.WriteLine("Algo errado.");
     }
@@ -127,7 +138,7 @@ metodo(1, z: 0, y: 2);
 
     // Codigo 5
     int num = 9;
-    // duvida: Se fosse float seria necessário adicionar o sufixo 'f' 
+    // Se fosse float seria necessário adicionar o sufixo 'f' 
     //float numfloat = 8.99f;
     double numfloat = 8.99;
     char letra = 'A';
@@ -148,7 +159,7 @@ metodo(1, z: 0, y: 2);
     Console.WriteLine($"{numfloat:F2}"); // Imprime 8.99
 */
 
-/* Questão 5*/
+/* Questão 5 */
 
 
 class Balanca
