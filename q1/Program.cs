@@ -159,101 +159,100 @@ metodo(1, z: 0, y: 2);
     Console.WriteLine($"{numfloat:F2}"); // Imprime 8.99
 */
 
-/* Questão 5 
+/* Questão 5 */
 
 
-    class Balanca
+class Balanca
+{
+    private int precisao;
+    private double tara = 5.0;
+    private double peso;
+
+    public Balanca(int precisao)
     {
-        private int precisao;
-        private double tara;
-        private double peso;
+        this.precisao = precisao;
+    }
 
-        public Balanca(int precisao)
-        {
-            this.precisao = precisao;
-            this.tara = 5.0; // valor padrão
-        }
+    public int Precisao
+    {
+        get { return precisao; }
+        set { precisao = value; }
+    }
 
-        public int Precisao
-        {
-            get { return precisao; }
-            set { precisao = value; }
-        }
+    public double Tara
+    {
+        get { return tara; }
+        set { tara = value; }
+    }
 
-        public double Tara
+    public double Peso
+    {
+        get { return peso; }
+        set
         {
-            get { return tara; }
-            set { tara = value; }
-        }
-
-        public double Peso
-        {
-            get { return peso; }
-            set
+            if (value < 0)
             {
-                if (value < 0)
-                {
-                    throw new ArgumentOutOfRangeException("Peso não pode ser negativo.");
-                }
-                peso = value;
+                throw new ArgumentOutOfRangeException("Peso não pode ser negativo.");
             }
-        }
-
-        public string MostrarPeso
-        {
-            get
-            {
-                double pesoSemTara = Peso - Tara;
-                return $"{pesoSemTara.ToString($"F{Precisao}")} kg";
-            }
+            peso = value;
         }
     }
 
-    class Program
+    public string MostrarPeso
     {
-        static void Main(string[] args)
+        get
         {
-            Console.WriteLine("Digite a precisão da balança:");
-            int precisao = int.Parse(Console.ReadLine());
-            Balanca balanca = new Balanca(precisao);
+            double pesoSemTara = Peso - Tara;
+            return $"{pesoSemTara.ToString($"F{Precisao}")} kg";
+        }
+    }
+}
 
-            while (true)
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Digite a precisão da balança:");
+        int precisao = int.Parse(Console.ReadLine());
+        Balanca balanca = new Balanca(precisao);
+
+        while (true)
+        {
+            try
             {
-                try
-                {
-                    Console.WriteLine("Digite o peso na balança:");
-                    double peso = double.Parse(Console.ReadLine());
-                    balanca.Peso = peso;
-                    Console.WriteLine(balanca.MostrarPeso);
+                Console.WriteLine("Digite o peso na balança:");
+                double peso_ = double.Parse(Console.ReadLine());
+                balanca.Peso = peso_;
+                Console.WriteLine(balanca.MostrarPeso);
 
-                    Console.WriteLine("Deseja calcular o próximo peso? (S/N): ");
-                    string continuar = Console.ReadLine();
-                    if (continuar.ToUpper() == "N")
-                    {
-                        break;
-                    }
-                }
-                catch (FormatException)
+                Console.WriteLine("Deseja calcular o próximo peso? (S/N): ");
+                string continuar = Console.ReadLine();
+                if (continuar.ToUpper() == "N")
                 {
-                    Console.WriteLine("Formato inválido. Por favor, insira um número válido.");
+                    break;
                 }
-                catch (ArgumentOutOfRangeException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Formato inválido. Por favor, insira um número válido.");
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
     }
-    */
+}
 
+/* 
 public class Balanca
 {
 
     private int precisao;
-    private double tara = 0.5;
+    private double tara = 5.0;
     private double peso;
 
-    Balanca(int pre)
+    public Balanca(int pre)
     {
         this.precisao = pre;
     }
@@ -278,16 +277,90 @@ public class Balanca
                 peso = value;
         }
     }
-    public string MostraPeso
+    public string MostraPeso()
     {
-        get
-        {
-            return $"{(peso - tara).ToString($"F{precisao}Kg")}";
-        }
+        double pesoMenosTara = Peso - Tara;
+        return $"{pesoMenosTara.ToString($"F{Precisao}")} kg";
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Balanca balanca = new(3);
+        balanca.Peso = 10.0;
+        Console.WriteLine(balanca.MostraPeso());
+
     }
 }
 
 
+/* Questão gpt
+
+public class ContaBancaria
+{
+
+    double saldo;
+    double limite = 0.0;
+    string numConta;
+    string nomeTitular;
+    public ContaBancaria(string numConta, string nomeTitular)
+    {
+        this.numConta = numConta;
+        this.nomeTitular = nomeTitular;
+    }
+
+    public string NumConta
+    {
+        get { return numConta; }
+        set { numConta = value; }
+    }
+    public string NomeTitular
+    {
+        get { return nomeTitular; }
+        set { nomeTitular = value; }
+    }
+    public double Limite
+    {
+        get { return limite; }
+        set { limite = value; }
+    }
+
+    public double Saldo
+    {
+        get { return saldo; }
+        set
+        {
+            if (saldo < 0)
+                throw new ArgumentOutOfRangeException("...");
+            else
+                saldo = value;
+        }
+    }
+
+    public string ExibirSaldo()
+    {
+        return $"R$ {Saldo:F2}";
+    }
+
+    public void Depositar(double valor)
+    {
+        Saldo = valor;
+    }
+
+}
 
 
+class Program
+{
+    static void Main()
+    {
+        ContaBancaria conta = new ContaBancaria("123456", "Filipi");
+        conta.Depositar(1000);
+        Console.WriteLine(conta.ExibirSaldo());
 
+
+    }
+}
+*/
