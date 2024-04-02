@@ -246,6 +246,47 @@ metodo(1, z: 0, y: 2);
     }
     */
 
+public class Balanca
+{
+
+    private int precisao;
+    private double tara = 0.5;
+    private double peso;
+
+    Balanca(int pre)
+    {
+        this.precisao = pre;
+    }
+
+    public int Precisao
+    {
+        get; set;
+    }
+    public double Tara
+    {
+        get; set;
+    }
+
+    public double Peso
+    {
+        get { return peso; }
+        set
+        {
+            if (value < 0)
+                throw new ArgumentOutOfRangeException("exceçao ai");
+            else
+                peso = value;
+        }
+    }
+    public string MostraPeso
+    {
+        get
+        {
+            return $"{(peso - tara).ToString($"F{precisao}Kg")}";
+        }
+    }
+}
+
 
 
 
