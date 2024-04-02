@@ -164,20 +164,20 @@ metodo(1, z: 0, y: 2);
 
 class Balanca
 {
-    private int precisão;
+    private int precisao;
     private double tara;
     private double peso;
 
-    public Balança(int precisão)
+    public Balanca(int precisao)
     {
-        this.precisão = precisão;
+        this.precisao = precisao;
         this.tara = 5.0; // valor padrão
     }
 
-    public int Precisão
+    public int Precisao
     {
-        get { return precisão; }
-        set { precisão = value; }
+        get { return precisao; }
+        set { precisao = value; }
     }
 
     public double Tara
@@ -204,7 +204,7 @@ class Balanca
         get
         {
             double pesoSemTara = Peso - Tara;
-            return $"{pesoSemTara.ToString($"F{Precisão}")} kg";
+            return $"{pesoSemTara.ToString($"F{Precisao}")} kg";
         }
     }
 }
@@ -214,8 +214,8 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Digite a precisão da balança:");
-        int precisão = int.Parse(Console.ReadLine());
-        Balança balança = new Balança(precisão);
+        int precisao = int.Parse(Console.ReadLine());
+        Balanca balanca = new Balanca(precisao);
 
         while (true)
         {
@@ -223,8 +223,8 @@ class Program
             {
                 Console.WriteLine("Digite o peso na balança:");
                 double peso = double.Parse(Console.ReadLine());
-                balança.Peso = peso;
-                Console.WriteLine(balança.MostrarPeso);
+                balanca.Peso = peso;
+                Console.WriteLine(balanca.MostrarPeso);
 
                 Console.WriteLine("Deseja calcular o próximo peso? (S/N): ");
                 string continuar = Console.ReadLine();
